@@ -1,0 +1,239 @@
+
+
+#mainNav {
+	@include transition(all, .4s, ease-in-out);
+	padding: 10px 0;
+    font-family: $font_family;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    background-color: white;
+//	background: transparent;
+	letter-spacing: 1px;
+    .navbar-toggler {
+        font-size: 13px;
+        padding: 11px;
+        color: white;
+        border: 1px solid black;
+    }
+	&.navbar-shrink {
+            padding: 10px 0;
+            background: white;
+        }
+	.navbar-nav{
+		.nav-item{
+			.nav-link{
+				border-bottom: 2px solid #ffffff;
+//				margin-bottom: -2px;
+				&:hover{
+					background: fade-out(black, .9);
+//					border-bottom: 2px solid #a22b00;
+//					margin-bottom: -2px;
+				}
+			}
+			.nav-link.active{
+				border-bottom: 2px solid #a22b00;
+//				margin-bottom: -2px;
+			}
+		}
+	}
+} 
+
+.masthead {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+	position: relative;
+    text-align: center;
+    color: white;
+	background-image: url(img/bg_body.jpg);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	
+	&::before{
+		  @include pseudo();
+		  top: 0;
+//		  right: 0;
+//		  bottom: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background-image: linear-gradient(to top, #000000, transparent);
+		  opacity: .5;
+	}
+	
+    .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+		ul{
+			margin-top: 500px;
+			li{
+				
+				a.building{
+					
+				}
+				a.highlight{
+					
+					color: black;
+					display: block;
+					font-size: 21px;
+					background: white;
+					padding: 15px 93px;
+					font-weight: 600;
+				}
+				
+				a.register{
+					
+					color: white;
+					display: block;
+					font-size: 21px;
+					background: #a22b00;
+					padding: 15px 150px;
+					font-weight: 600;
+				}
+				a.scroll{
+					color: white;
+					font-style: normal;
+					font-weight: 200;
+				}
+			}
+		}
+		
+        .brand-heading {
+            font-size: 40px;
+        }
+        .intro-text {
+            font-size: 18px;
+        }
+    }
+    @media(min-width:768px) {
+		
+        height: 100%;
+//        padding: 100px 0px;
+        .intro-body {
+            .brand-heading {
+                font-size: 100px;
+            }
+            .intro-text {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+.btn-circle {
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    padding: 7px 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    color: white;
+    background: transparent;
+    &:hover,
+    &:focus {
+        color: white;
+        outline: none;
+//        background: fade-out(white, .9);
+		
+    }
+}
+
+.content-section {
+//    padding-top: 100px;
+	
+}
+
+.download-section {
+    width: 100%;
+    padding: 50px 0;
+    color: white;
+    background: url(img/thedifference.jpg) no-repeat center center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#map {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+}
+
+@media(min-width:767px) {
+    .content-section {
+//        padding-top: 250px;
+    }
+    .download-section {
+        padding: 100px 0;
+    }
+    #map {
+        height: 350px;
+        margin-top: 250px;
+    }
+}
+
+.btn-default {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: transparent;
+    &:hover,
+    &:focus {
+        color: black;
+        border: 1px solid $primary;
+        outline: none;
+        background-color: $primary;
+    }
+}
+
+ul.banner-social-buttons {
+    margin-top: 0;
+    @media(max-width: 1199px) {
+        margin-top: 15px;
+    }
+    @media(max-width:767px) {
+        li {
+            display: block;
+            margin-bottom: 20px;
+            padding: 0;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+
+::-moz-selection {
+    background: #fcfcfc;
+    background: fade-out(white, .8);
+    text-shadow: none;
+}
+
+::selection {
+    background: #fcfcfc;
+    background: fade-out(white, .8);
+    text-shadow: none;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    -webkit-tap-highlight-color: fade-out(white, .8);
+}
