@@ -1,0 +1,62 @@
+    $spacer: 1rem !default;
+    
+    $spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+) !default;
+    
+    
+    $grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+    
+    
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+
+        .#{$abbrev}_#{$size}  { #{$prop}:        $length !important; }
+        .#{$abbrev}t_#{$size},
+        .#{$abbrev}y_#{$size} {
+          #{$prop}-top: $length !important;
+        }
+        .#{$abbrev}r_#{$size},
+        .#{$abbrev}x_#{$size} {
+          #{$prop}-right: $length !important;
+        }
+        .#{$abbrev}b_#{$size},
+        .#{$abbrev}y_#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+        .#{$abbrev}l_#{$size},
+        .#{$abbrev}x_#{$size} {
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
+  
+    .m_auto  { margin:        auto !important; }
+    .mt_auto,
+    .my_auto {
+      margin-top: auto !important;
+    }
+    .mr_auto,
+    .mx_auto {
+      margin-right: auto !important;
+    }
+    .mb_auto,
+    .my_auto {
+      margin-bottom: auto !important;
+    }
+    .ml_auto,
+    .mx_auto {
+      margin-left: auto !important;
+    }
